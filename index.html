@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasyakuran Pernikahan - Dery & Asih</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-purple-soft font-montserrat">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="text-center">
+        <h2 class="font-great-vibes text-4xl text-primary mb-4">Dery & Asih</h2>
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <button
+        class="absolute top-4 right-4 close-menu p-2 rounded-lg hover:bg-gray-100"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <div class="flex flex-col space-y-2 mt-16">
+        <a href="#home" class="mobile-menu-link">Beranda</a>
+        <a href="#acara" class="mobile-menu-link">Acara</a>
+        <a href="#mempelai" class="mobile-menu-link">Mempelai</a>
+        <a href="#undangan" class="mobile-menu-link">Undangan</a>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar py-4 shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <a href="#" class="font-great-vibes text-2xl text-primary">D & A</a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link hover:text-primary transition-colors"
+              >Beranda</a
+            >
+            <a
+              href="#acara"
+              class="nav-link hover:text-primary transition-colors"
+              >Acara</a
+            >
+            <a
+              href="#mempelai"
+              class="nav-link hover:text-primary transition-colors"
+              >Mempelai</a
+            >
+            <a
+              href="#undangan"
+              class="nav-link hover:text-primary transition-colors"
+              >Undangan</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="md:hidden mobile-menu-button p-2 rounded-lg hover:bg-gray-100"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      id="home"
+      class="min-h-screen flex items-center justify-center bg-cover bg-center relative"
+      style="background-image: url('images/bg-hero.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div
+        class="relative text-center text-white z-10 p-8"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h1 class="text-4xl md:text-6xl font-great-vibes mb-4">Tasyakuran</h1>
+        <p class="text-xl mb-6">Sabtu, 05 April 2025</p>
+        <h2 class="text-5xl md:text-7xl font-great-vibes">Dery & Asih</h2>
+      </div>
+    </header>
+
+    <div class="section-connector"></div>
+
+    <!-- Pengantar dan Doa -->
+    <section id="acara" class="section-purple">
+      <div class="section-container text-center">
+        <h3 class="text-2xl mb-6" data-aos="fade-up">Assalamu'alaikum Wr.Wb</h3>
+        <p class="mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          Dengan memohon Rahmat dan Ridho Allah SWT, kami mengundang
+          Bapak/Ibu/Saudara/i untuk menghadiri Tasyakuran pernikahan putra-putri
+          kami, yang Insya Allah akan diselenggarakan pada:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div
+            class="card border-2 border-purple-300 p-6 rounded-lg"
+            data-aos="fade-right"
+          >
+            <h4 class="text-xl font-semibold mb-2">Akad Nikah</h4>
+            <p>Senin, 24 Februari 2025</p>
+            <p class="text-purple-600">Telah di Laksanakan</p>
+          </div>
+          <div
+            class="card border-2 border-purple-300 p-6 rounded-lg"
+            data-aos="fade-left"
+          >
+            <h4 class="text-xl font-semibold mb-2">Tasyakuran</h4>
+            <p>Sabtu, 05 April 2025</p>
+            <p>Pukul 10:00 WIB s/d 17:00</p>
+            <p>Bertempat di:</p>
+            <p>Kp. Cibolang RT. 26/06</p>
+            <p>Desa Cibatu, Kec. Cisaat</p>
+            <p>Kab. Sukabumi</p>
+          </div>
+        </div>
+
+        <p class="mb-8 italic" data-aos="fade-up">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+          Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada
+          putra-putri kami.
+        </p>
+
+        <p class="text-xl mb-8" data-aos="fade-up">Wassalamu'alaikum Wr. Wb</p>
+
+        <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+          <div>
+            <h4 class="font-semibold mb-2">Keluarga</h4>
+            <h4 class="font-semibold mb-2">
+              Bpk. Syarif Hidayat (Ketua RW. 06)
+            </h4>
+            <p class="font-semibold mb-2">Ibu Titin Patimah</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Keluarga</h4>
+            <h4 class="font-semibold mb-2">Bpk. Harun (Alm)</h4>
+            <p class="font-semibold mb-2">Ibu Minarti</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-connector-reverse"></div>
+
+    <!-- Nama Mempelai -->
+    <section id="mempelai" class="section-light">
+      <div class="section-container text-center">
+        <p class="mb-8 italic" data-aos="fade-up">
+          Maha Suci Allah SWT yang telah menciptakan makhluk-Nya berpasang
+          pasangan. Ya Allah semoga Ridho-Mu tercurah mengiringi pernikahan
+          putra putri kami:
+        </p>
+
+        <div class="space-y-8">
+          <div data-aos="fade-right" data-aos-duration="1000">
+            <h3 class="text-3xl font-great-vibes text-primary mb-4">
+              Dery Rahman Hidayat
+            </h3>
+            <p>Putra Ke-3 dari</p>
+            <p>Bpk. Syarif Hidayat & Ibu Titin Patimah</p>
+          </div>
+
+          <div data-aos="zoom-in" data-aos-duration="1000">🤍</div>
+
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <h3 class="text-3xl font-great-vibes text-primary mb-4">
+              Asih Oktavia Hasari
+            </h3>
+            <p>Putri Ke-6 dari</p>
+            <p>Bpk. Harun (Alm) & Ibu Minarti</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-connector"></div>
+
+    <!-- Turut Mengundang -->
+    <section id="undangan" class="section-purple">
+      <div class="section-container text-center">
+        <h3 class="text-2xl text-center mb-8" data-aos="fade-up">
+          Turut Mengundang
+        </h3>
+        <ul
+          class="space-y-2 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <li>Bpk. Asep Rahmat / Jefri (Kepala Desa Cibatu)</li>
+          <li>Bpk. K.H Cecep Lukman (Pimpinan Ponpes Syamsul Huda)</li>
+          <li>Bpk. O. Jamjuri (Ketua DKM Masjid Jami Al-Barokah)</li>
+          <li>Bpk. Zaeni Maksum (A.Jejen) Owner CV. Putra Sahabat</li>
+          <li>Bpk. Ujang Jamaludin (Ketua Rt. 26/06)</li>
+          <li>Sdr. Cepy Ramlan Hidayat (Anak Pertama)</li>
+          <li>Sdr. Pery Farhan Hidayat (Anak Kedua)</li>
+          <li>Keluarga Besar Bpk. Harun (Alm) & Ibu Minarti</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="text-center py-8 text-sm text-gray-600">
+      <p>© 2025 Tasyakuran Pernikahan Dery & Asih</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
