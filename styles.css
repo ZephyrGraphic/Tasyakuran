@@ -62,7 +62,9 @@
 
 /* Navbar styles */
 .navbar {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: fixed;
   top: 0;
@@ -79,6 +81,7 @@
 }
 
 .navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -133,6 +136,13 @@
 .mobile-menu-link:hover {
   background-color: #f3e5f5;
   color: #9c27b0;
+}
+
+/* Mobile menu link active state */
+.mobile-menu-link.active {
+  background-color: #f3e5f5;
+  color: #9c27b0;
+  font-weight: 500;
 }
 
 /* Cards */
@@ -349,13 +359,7 @@ section {
 
 /* Gradient untuk section mempelai */
 #mempelai {
-  background: linear-gradient(
-    180deg,
-    #f3e5f5 0%,
-    #ffffff 20%,
-    #ffffff 80%,
-    #f3e5f5 100%
-  );
+  background: linear-gradient(180deg, #f3e5f5 0%, #ffffff 20%, #ffffff 80%, #f3e5f5 100%);
   position: relative;
   padding: 6rem 1rem;
 }
@@ -399,3 +403,130 @@ section {
     font-size: 0.75rem;
   }
 }
+
+/* Gallery styles */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Audio player styles */
+.audio-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 30;
+}
+
+.music-toggle-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.music-toggle-btn.active {
+  animation: pulse 2s infinite;
+}
+
+.music-icon {
+  font-size: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(156, 39, 176, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(156, 39, 176, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(156, 39, 176, 0);
+  }
+}
+
+/* Lightgallery custom styles */
+.lg-backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.lg-toolbar,
+.lg-outer {
+  background-color: transparent;
+}
+
+/* Gradient untuk section undangan (turut mengundang) */
+#undangan {
+  background: linear-gradient(180deg, #f3e5f5 0%, #ffffff 20%, #ffffff 80%, #f3e5f5 100%);
+  position: relative;
+  padding: 6rem 1rem;
+}
+
+/* Remove section connector before undangan since we're using gradient */
+#undangan {
+  margin-top: -50px;
+}
+
+/* Pastikan konten tetap terbaca */
+#undangan .section-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Improve nav links spacing for gallery addition */
+@media (min-width: 768px) {
+  .navbar .hidden.md\:flex {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}
+
+/* Active nav link styles */
+.nav-link.active {
+  color: #9c27b0;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Adjust section connector after galeri */
+.section-connector + #undangan {
+  margin-top: 0;
+}
+

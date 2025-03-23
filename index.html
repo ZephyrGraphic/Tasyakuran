@@ -24,6 +24,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-zoom.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-thumbnail.css" />
   </head>
   <body class="bg-purple-soft font-montserrat">
     <!-- Loading Screen -->
@@ -32,6 +37,18 @@
         <h2 class="font-great-vibes text-4xl text-primary mb-4">Dery & Asih</h2>
         <div class="loading-spinner"></div>
       </div>
+    </div>
+
+    <!-- Audio Player (Hidden) -->
+    <div class="audio-player">
+      <audio id="background-music" loop>
+        <source src="audio/wedding-music.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung tag audio.
+      </audio>
+      <button id="music-toggle" class="music-toggle-btn" aria-label="Play/Pause Music">
+        <span class="music-icon music-play-icon">♫</span>
+        <span class="music-icon music-pause-icon hidden">♫</span>
+      </button>
     </div>
 
     <!-- Mobile Menu Overlay -->
@@ -57,11 +74,12 @@
         </svg>
       </button>
       <div class="flex flex-col space-y-2 mt-16">
-        <a href="#home" class="mobile-menu-link">Beranda</a>
-        <a href="#acara" class="mobile-menu-link">Acara</a>
-        <a href="#mempelai" class="mobile-menu-link">Mempelai</a>
-        <a href="#undangan" class="mobile-menu-link">Undangan</a>
-      </div>
+  <a href="#home" class="mobile-menu-link">Beranda</a>
+  <a href="#acara" class="mobile-menu-link">Acara</a>
+  <a href="#mempelai" class="mobile-menu-link">Mempelai</a>
+  <a href="#galeri" class="mobile-menu-link">Galeri</a>
+  <a href="#undangan" class="mobile-menu-link">Undangan</a>
+</div>
     </div>
 
     <!-- Navbar -->
@@ -72,27 +90,32 @@
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              class="nav-link hover:text-primary transition-colors"
-              >Beranda</a
-            >
-            <a
-              href="#acara"
-              class="nav-link hover:text-primary transition-colors"
-              >Acara</a
-            >
-            <a
-              href="#mempelai"
-              class="nav-link hover:text-primary transition-colors"
-              >Mempelai</a
-            >
-            <a
-              href="#undangan"
-              class="nav-link hover:text-primary transition-colors"
-              >Undangan</a
-            >
-          </div>
+  <a
+    href="#home"
+    class="nav-link hover:text-primary transition-colors"
+    >Beranda</a
+  >
+  <a
+    href="#acara"
+    class="nav-link hover:text-primary transition-colors"
+    >Acara</a
+  >
+  <a
+    href="#mempelai"
+    class="nav-link hover:text-primary transition-colors"
+    >Mempelai</a
+  >
+  <a
+    href="#galeri"
+    class="nav-link hover:text-primary transition-colors"
+    >Galeri</a
+  >
+  <a
+    href="#undangan"
+    class="nav-link hover:text-primary transition-colors"
+    >Undangan</a
+  >
+</div>
 
           <!-- Mobile Menu Button -->
           <button
@@ -128,7 +151,7 @@
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <h1 class="text-4xl md:text-6xl font-great-vibes mb-4">Tasyakuran</h1>
+        <h1 class="text-4xl md:text-6xl font-great-vibes mb-4">Tasyakuran - Ngunduh Mantu</h1>
         <p class="text-xl mb-6">Sabtu, 05 April 2025</p>
         <h2 class="text-5xl md:text-7xl font-great-vibes mb-8">Dery & Asih</h2>
 
@@ -257,30 +280,64 @@
       </div>
     </section>
 
+    <!-- Galeri Section -->
     <div class="section-connector"></div>
-
-    <!-- Turut Mengundang -->
-    <section id="undangan" class="section-purple">
+    
+    <section id="galeri" class="section-purple">
       <div class="section-container text-center">
         <h3 class="text-2xl text-center mb-8" data-aos="fade-up">
-          Turut Mengundang
+          Galeri Foto
         </h3>
-        <ul
-          class="space-y-2 text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <li>Bpk. Asep Rahmat / Jefri (Kepala Desa Cibatu)</li>
-          <li>Bpk. K.H Cecep Lukman (Pimpinan Ponpes Syamsul Huda)</li>
-          <li>Bpk. O. Jamjuri (Ketua DKM Masjid Jami Al-Barokah)</li>
-          <li>Bpk. Zaeni Maksum (A.Jejen) Owner CV. Putra Sahabat</li>
-          <li>Bpk. Ujang Jamaludin (Ketua Rt. 26/06)</li>
-          <li>Sdr. Cepy Ramlan Hidayat (Anak Pertama)</li>
-          <li>Sdr. Pery Farhan Hidayat (Anak Kedua)</li>
-          <li>Keluarga Besar Bpk. Harun (Alm) & Ibu Minarti</li>
-        </ul>
+        
+        <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-aos="fade-up">
+          <!-- Gallery images will be loaded here via JavaScript -->
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 1" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 2" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 3" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 4" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 5" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+          <div class="gallery-item">
+            <img src="/placeholder.svg?height=300&width=300" alt="Foto Prewedding 6" class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-all cursor-pointer object-cover aspect-square" />
+          </div>
+        </div>
       </div>
     </section>
+
+    <div class="section-connector-reverse"></div>
+
+    <!-- Turut Mengundang -->
+    
+    <section id="undangan" class="section-light">
+  <div class="section-container text-center">
+    <h3 class="text-2xl text-center mb-8" data-aos="fade-up">
+      Turut Mengundang
+    </h3>
+    <ul
+      class="space-y-2 text-center"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <li>Bpk. Asep Rahmat / Jefri (Kepala Desa Cibatu)</li>
+      <li>Bpk. K.H Cecep Lukman (Pimpinan Ponpes Syamsul Huda)</li>
+      <li>Bpk. O. Jamjuri (Ketua DKM Masjid Jami Al-Barokah)</li>
+      <li>Bpk. Zaeni Maksum (A.Jejen) Owner CV. Putra Sahabat</li>
+      <li>Bpk. Ujang Jamaludin (Ketua Rt. 26/06)</li>
+      <li>Sdr. Cepy Ramlan Hidayat (Anak Pertama)</li>
+      <li>Sdr. Pery Farhan Hidayat (Anak Kedua)</li>
+      <li>Keluarga Besar Bpk. Harun (Alm) & Ibu Minarti</li>
+    </ul>
+  </div>
+</section>
 
     <footer class="text-center py-8 text-sm text-gray-600">
       <p>© 2025 Tasyakuran Pernikahan Dery & Asih</p>
@@ -288,6 +345,13 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lightbox Gallery Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    
     <script src="scripts.js"></script>
   </body>
 </html>
+
